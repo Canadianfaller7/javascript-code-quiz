@@ -12,20 +12,21 @@
             <a class="btn" id="view-highscore" href="./highscore.html">View Highscore</a>
             <p id="time-left">Time left: </p>
         </header>
-        <main id="quiz-content" class="row justify-content-center">
-            <div id="quiz-card" class="col-8"></div>
-            <section id="question-container">
-                <div id="question">Question</div>
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </section>
+        <main>
             <section id="main-text">
                 <h1 id="quiz-header">Coding Quiz Challenge</h1>
                 <p id="quiz-main-text">Welcome to the JavaScript Coding Quiz Challange! Here you will be asked a series of question about JavaScript and you will have 60 seconds to answer all 5 questions. Each question you get wrong will remove 12 seconds from the timer. At the end you will be able to put in your initials for the Highscore board and see if you can beat your time! Good luck and have fun!</p>
             </section>
             <button id="start-quiz" class="btn">Start Quiz</button>
+            <section id="question-container" class="hide">
+                <div id="question">Question</div>
+                <div id="answer-button">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </section>
         </main>
         <script src="./assets/js/script.js"></script>
     </body>

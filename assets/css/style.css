@@ -73,6 +73,10 @@ main {
     width: 75%;
 }
 
+.hide {
+    display: none;
+}
+
 #final-score {
     color: whitesmoke;
     margin-bottom: 250px;
@@ -85,5 +89,11 @@ main {
     color: whitesmoke;
     border-radius: 6px;
     padding: 3px 25px 3px 25px;
+}
+
+#question {
+    color: whitesmoke;
+    font-size: 4em;
+    margin-bottom: 50px;
 }
 
