@@ -138,10 +138,13 @@ const renderHighScores = () => {
     // Clear content
     scoresEl.innerHTML = "";
     show(highScoresEl);
+    // here we set the highscore equal to the string version of scores from the local storage
     highScores = JSON.parse(localStorage.getItem("scores"));
+    // loop through the highscores length
     for (let i = 0; i < highScores.length; i++) {
+        // make a new var that makes a new div in our html
         let scoreItem = document.createElement("div");
-        console.log(scoreItem)
+        // setting the div to have the name of user and their score added into the html to display on screen
         scoreItem.textContent = `${(i + 1)}. ${highScores[i].username} - ${highScores[i].userScore}`;
         scoresEl.appendChild(scoreItem);
     }
