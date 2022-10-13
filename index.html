@@ -1,33 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JavaScript Code Quiz</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Code Quiz</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
+
     <body>
+        <!-- Header -->
         <header>
-            <a class="btn" id="view-highscore" href="./highscore.html">View Highscore</a>
-            <p id="time-left">Time left: </p>
+            <div>
+                <button id="view-highscore">View Highscore</button>
+            </div>
+            <div>
+                <p id="time-left">Time left: </p>
+            </div>
         </header>
-        <main>
-            <section id="main-text">
-                <h1 id="quiz-header">Coding Quiz Challenge</h1>
-                <p id="quiz-main-text">Welcome to the JavaScript Coding Quiz Challange! Here you will be asked a series of question about JavaScript and you will have 60 seconds to answer all 5 questions. Each question you get wrong will remove 12 seconds from the timer. At the end you will be able to put in your initials for the Highscore board and see if you can beat your time! Good luck and have fun!</p>
-            </section>
-            <button id="start-quiz" class="btn">Start Quiz</button>
-            <section id="question-container" class="hide">
-                <div id="question">Question</div>
-                <div id="answer-button">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
+        <!-- end header -->
+
+        <!-- jumbotron -->
+        <main class="quiz-container">
+            <section class="main-container">
+                <!-- welcome  -->
+                <div id="main-text">
+                    <h1 id="main-header">Coding Quiz Challenge</h1>
+                    <p class="main-text"">Try to answer the following code-related questions with the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
+                    <button type="button" class="my-buttons" id="start-quiz">Start Quiz</button>
+                </div>
+
+                <!-- quiz -->
+                <div id="quiz">
+                    <h2 id="question"></h2>
+                    <div id="answers">
+                        <div>
+                            <button type="button" class="my-buttons" id="0"></button>
+                        </div>
+                        <div>
+                            <button type="button" class="my-buttons" id="1"></button>
+                        </div>
+                        <div>
+                            <button type="button" class="my-buttons" id="2"></button>
+                        </div>
+                        <div>
+                            <button type="button" class="my-buttons" id="3"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- input high scores -->
+                <div id="input-score">
+                    <h2>Your final score: <span id="score"></span></h2>
+                    <p id="names">Enter Name: <input type="text" id="users-name"></p>
+                    <button type="button" class="my-buttons" id="submit-name">Submit</button>
+                </div>
+
+                <!-- view high scores -->
+                <div id="high-scores">
+                    <h2 id="scores-header">Highscores</h2>
+                    <div id="scores"></div>
+                    <button type="button" class="my-buttons" id="go-back">Go Back</button>
+                    <button type="button" class="my-buttons" id="clear-scores">Clear Scores</button>
                 </div>
             </section>
         </main>
-        <script src="./assets/js/script.js"></script>
+
+        <!-- JavaScript -->
+        <script src="assets/js/questions.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
