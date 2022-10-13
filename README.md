@@ -1,4 +1,4 @@
-# javascript-code-quiz
+# JavaScript Code Quiz
 
 ## Description
 - This is a webpage where you are presented with a simple form and a generate password button and when you click on it, a series of JavaScript functions will run to get specific criteria from you on how long you want your password to be and if you want Uppercase letters, Lowercase letters, Number, and or Special characters and make sure you met the minimum requirements for the password. Once that is taken in, then it will put on the screen the random password which you can then copy and use.
