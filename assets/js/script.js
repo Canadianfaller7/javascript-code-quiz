@@ -52,16 +52,21 @@ const stopTimer = () => {
 //Clears current question and calls for display of next question
 //Calls for input score display if last question
 const nextQuestion = () => {
+    // add 1 to the question count
     currentQ++;
+    // check and make sure it is less than the questions length and if so call function to get next question
     if (currentQ < questions.length) {
         renderQuestion();
+    // else stop timer, check if the time is greater than 0 and then get user score
     } else {
         stopTimer();
-        if ((startTime - timePassed) > 0)
-            score += (startTime - timePassed);
+        if ((startTime - timePassed) > 0) {
+             score += (startTime - timePassed);
+        }
         userScoreEl.textContent = score;
         hide(quizEl);
         show(inputScoreEl);
+        // giving us the time left
         timerEl.textContent = `Time left: ${startTime}`;
     }
 }
@@ -70,8 +75,10 @@ const nextQuestion = () => {
 const checkAnswer = answer => {
     if (questions[currentQ].answer == questions[currentQ].choices[answer.id]) {
         score += 45;
+        // tell user they selected the correct answer
         displayMessage("Correct!");
     }
+    // if question is wrong remove 9 seconds from timer and tell user they chose wrong
     else {
         timePassed += 9;
         displayMessage("Wrong...");
@@ -80,30 +87,34 @@ const checkAnswer = answer => {
 
 //displays whether answer clicked is right or wrong
 const displayMessage = m => {
+    // making var to add break line and a new div element so we can then display correct or wrong to user
     let messageHr = document.createElement("hr");
     let messageEl = document.createElement("div");
+    // setting color and font size of message
     messageEl.setAttribute("style", "color: var(--off-white-blue); font-size: 35px;")
     messageEl.textContent = m;
+    // adding the variables to our element with class .main-container
     document.querySelector(".main-container").appendChild(messageHr);
     document.querySelector(".main-container").appendChild(messageEl);
-    setTimeout(function () {
+    // setting a timeout function here to display the message for half a second and then remove them again
+    setTimeout(() => {
             messageHr.remove();
             messageEl.remove();
     }, 500);
 
 }
 
-//hides element
+//hides element by setting the element inside the function to show display of none
 const hide = element => {
     element.style.display = "none";
 }
 
-//displays element
+//displays element by setting the element inside the function to show display of block
 const show = element => {
     element.style.display = "block";
 }
 
-//reset local letiables
+//reset local variables all back to 0
 const reset = () => {
     score = 0;
     currentQ = 0;
@@ -114,7 +125,9 @@ const reset = () => {
 
 //Renders current question
 const renderQuestion = () => {
+    // this is getting the textContent of the html element and setting it equal to the question in our array object
     questionEl.textContent = questions[currentQ].question;
+    // looping through the answers and setting them up to be in the buttons later on when the question is displayed
     for (i = 0; i < answersEl.children.length; i++) {
         answersEl.children[i].children[0].textContent = `${(i + 1)}: ${questions[currentQ].choices[i]}`;
     }

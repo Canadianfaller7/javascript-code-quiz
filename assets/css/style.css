@@ -9,11 +9,13 @@
     padding: 0;
 }
 
+/* Giving background color to the page of quiz and adding margin of 10px all around */
 body {
     background-color: var(--dark-grey);
     margin: 10px;
 }
 
+/* making it so the header has display of flex so the time and highscore button are side by side with space between with a border around header */
 header {
     display: flex;
     justify-content: space-between;
@@ -22,6 +24,7 @@ header {
     border-radius: 15px;
 }
 
+/* styling the border of highscore button and text size */
 #view-highscore {
     margin-top: 5px;
     margin-left: 10px;
@@ -35,6 +38,7 @@ header {
     font-size: 18px;
 }
 
+/* styling border of time element and font size */
 #time-left {
     border: var(--cyan) 2px solid;
     padding: 4px;
@@ -47,6 +51,7 @@ header {
     font-size: 25px;
 }
 
+/* setting color and style and border radius to all my buttons and having a hand for when hovering over buttons*/
 .my-buttons {
     margin-left: 10px;
     padding: 5px 25px 5px 25px;
@@ -57,6 +62,7 @@ header {
     cursor: pointer;
 }
 
+/* aligning all text and giving border around main content */
 main {
     text-align: center;
     margin-top: 20px;
@@ -66,35 +72,41 @@ main {
     
 }
 
+/* setting size and color to the h1 header */
 #main-header {
     color: var(--off-white-blue);
     margin: 15px 0 25px 0;
     font-size: 3em;
 }
 
+/* giving color and font size to main text */
 .main-text {
     color: var(--off-white-blue);
     margin-bottom: 20px;
     font-size: 20px;
 }
 
+/* changing start quize button font size and giving some padding to be bigger */
 #start-quiz {
     font-size: 20px;
     padding: 5px 25px 5px 25px;
     margin-bottom: 5px;
 }
 
+/* adding padding and width size to main context to look like a smaller box */
 .quiz-container {
     margin: 200px auto 200px auto;
     width: 75%;
 }
 
+/* giving color and font size to question text */
 #question {
     color: var(--off-white-blue);
     font-size: 4em;
     margin-bottom: 50px;
 }
 
+/* making it so the header has display of flex so the time and highscore button are side by side with space between with a border around header */
 #answers {
     display: flex;
     flex-direction: row;
@@ -102,28 +114,34 @@ main {
     margin-bottom: 5px;
 }
 
+/* giving color and some margin from top of box */
 #input-score {
     color: var(--off-white-blue);
     margin-top: 10px;
 }
 
+/* adding space to top and bottom of name */
 #names {
     margin-top: 40px;
     margin-bottom: 10px;
 }
 
+/* giving color to highscore */
 #high-scores {
     color: var(--off-white-blue);
 }
 
+/* adding space for score header */
 #scores-header {
     margin-bottom: 20px;
 }
 
+/* adding space for score */
 #scores {
     margin-bottom: 20px;
 }
 
+/* hiding all elements with these id's attached to them */
 #quiz,#input-score, #high-scores{
     display: none;
 } 
