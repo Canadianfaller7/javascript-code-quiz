@@ -147,9 +147,6 @@ const renderHighScores = () => {
     }
 }
 
-
-//=========================EVENTS================================
-
 //displays high scores by hiding other vars and then calling the render highscore function, stop timer function and reset function.
 viewHScoresBtnEl.addEventListener("click", () => {
     hide(mainEl);
