@@ -32,7 +32,7 @@ let startTime = 70;
 let timePassed = 0;
 
 //starts and updates timer
-function startTimer() {
+const startTimer = () => {
     timerEl.textContent = `Time left: ${startTime}`;
     timerInterval = setInterval(function () {
         timePassed++;
@@ -45,13 +45,13 @@ function startTimer() {
 }
 
 //stops timer
-function stopTimer() {
+const stopTimer = () => {
     clearInterval(timerInterval);
 }
 
 //Clears current question and calls for display of next question
 //Calls for input score display if last question
-function nextQuestion() {
+const nextQuestion = () => {
     currentQ++;
     if (currentQ < questions.length) {
         renderQuestion();
@@ -67,7 +67,7 @@ function nextQuestion() {
 }
 
 //checks answer based on current question and updates the user score
-function checkAnswer(answer) {
+const checkAnswer = answer => {
     if (questions[currentQ].answer == questions[currentQ].choices[answer.id]) {
         score += 45;
         displayMessage("Correct!");
@@ -78,18 +78,18 @@ function checkAnswer(answer) {
     }
 }
 
-//displays a message for 2 seconds
-function displayMessage(m) {
+//displays whether answer clicked is right or wrong
+const displayMessage = m => {
     let messageHr = document.createElement("hr");
     let messageEl = document.createElement("div");
-    messageEl.setAttribute("style", "color: let(--off-white-blue); font-size: 25px")
+    messageEl.setAttribute("style", "color: var(--off-white-blue); font-size: 35px;")
     messageEl.textContent = m;
     document.querySelector(".main-container").appendChild(messageHr);
     document.querySelector(".main-container").appendChild(messageEl);
     setTimeout(function () {
             messageHr.remove();
             messageEl.remove();
-    }, 1000);
+    }, 500);
 
 }
 
@@ -111,7 +111,6 @@ const reset = () => {
     timerEl.textContent = `Time left: ${startTime}`;
 }
 
-//=================== Rendering ================================
 
 //Renders current question
 const renderQuestion = () => {
