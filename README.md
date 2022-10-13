@@ -9,7 +9,7 @@
 N/A
 
 ## Usage
-The webpage is a porfolio with some information that people can view, see my resume and what projects I have worked on and contact me by filling out the contact form.
+Click the URL below to the web application and enjoy the quiz!
 * [JavaScript Code Quiz](https://canadianfaller7.github.io/javascript-code-quiz/ "Named link title")
 
 ## Credits
