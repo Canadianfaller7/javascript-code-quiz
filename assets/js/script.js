@@ -3,7 +3,7 @@ const viewHScoresBtnEl = document.querySelector("#view-highscore");
 const timerEl = document.querySelector("#time-left");
 
 // Welcome Page Elements =====================================
-const mainEl = document.querySelector("#main-text");
+const mainEl = document.querySelector("#home-section");
 const startQuizBtnEl = document.querySelector("#start-quiz");
 
 //Quiz Page Elements =========================================
@@ -111,7 +111,7 @@ const hide = element => {
 
 //displays element by setting the element inside the function to show display of block
 const show = element => {
-    element.style.display = "block";
+    element.style.display = "flex";
 }
 
 //reset local variables all back to 0
@@ -142,6 +142,7 @@ const renderHighScores = () => {
     highScores = JSON.parse(localStorage.getItem("scores"));
     // loop through the highscores length
     for (let i = 0; i < highScores.length; i++) {
+        
         // make a new var that makes a new div in our html
         let scoreItem = document.createElement("div");
         // setting the div to have the name of user and their score added into the html to display on screen
@@ -181,11 +182,12 @@ answersEl.addEventListener("click", e => {
 submitInitialsBtnEl.addEventListener("click", () => {
     let initValue = nameEl.value.trim();
     if (initValue) {
-        let userScore = { username: initValue, userScore: score };
+        let usersScore = { username: initValue, userScore: score };
         nameEl.value = '';
         highScores = JSON.parse(localStorage.getItem("scores")) || [];
-        highScores.push(userScore)
-        localStorage.setItem("scores", JSON.stringify(highScores));
+        highScores.push(usersScore)
+        let sortedScores = highScores.sort((a, b) => b.userScore - a.userScore);
+        localStorage.setItem("scores", JSON.stringify(sortedScores));
         hide(inputScoreEl);
         renderHighScores();
         reset();

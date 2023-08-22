@@ -1,7 +1,7 @@
 :root {
-  --cyan: cyan;
-  --dark-grey: #373737;
-  --off-white-blue: rgb(232, 252, 255);
+    --cyan: cyan;
+    --dark-grey: #373737;
+    --off-white-blue: rgb(232, 252, 255);
 }
 
 * {
@@ -12,8 +12,10 @@
 /* Giving background color to the page of quiz and adding margin of 10px all around */
 body {
     background-color: var(--dark-grey);
-    margin: 10px;
+    margin: 5px;
 }
+
+/*_________________MAIN SECTION___________________*/
 
 /* making it so the header has display of flex so the time and highscore button are side by side with space between with a border around header */
 header {
@@ -25,7 +27,7 @@ header {
 }
 
 /* styling the border of highscore button and text size */
-#view-highscore {
+/* #view-highscore {
     margin-top: 5px;
     margin-left: 10px;
     padding: 5px 25px 5px 25px;
@@ -36,10 +38,22 @@ header {
     border: var(--cyan) 2px solid;
     text-align: center;
     font-size: 18px;
+} */
+
+#view-highscore, #time-left {
+    margin: 5px auto;
+    padding: 15px 25px;
+    color: var(--off-white-blue);
+    background-color: var(--dark-grey) ;
+    border-radius: 6px;
+    cursor: pointer;
+    border: var(--cyan) 2px solid;
+    text-align: center;
+    font-size: 12px;
 }
 
 /* styling border of time element and font size */
-#time-left {
+/* #time-left {
     border: var(--cyan) 2px solid;
     padding: 4px;
     border-radius: 6px;
@@ -49,12 +63,28 @@ header {
     margin-right: 10px;
     padding-right: 40px;
     font-size: 25px;
+} */
+
+#time-left {
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 /* setting color and style and border radius to all my buttons and having a hand for when hovering over buttons*/
-.my-buttons {
+/* .my-buttons {
     margin-left: 10px;
     padding: 5px 25px 5px 25px;
+    border-color: var(--cyan);
+    background-color: var(--dark-grey);
+    color: var(--off-white-blue);
+    border-radius: 6px;
+    cursor: pointer;
+} */
+
+.my-buttons {
+    margin: 5px auto;
+    padding: 5px 25px;
+    width: 100%;
     border-color: var(--cyan);
     background-color: var(--dark-grey);
     color: var(--off-white-blue);
@@ -63,13 +93,36 @@ header {
 }
 
 /* aligning all text and giving border around main content */
-main {
+/* adding padding and width size to main context to look like a smaller box */
+/* .quiz-container {
+    margin: 200px auto 200px auto;
+    width: 75%;
     text-align: center;
     margin-top: 20px;
     border: var(--cyan) 2px solid;
     padding: 6px;
     border-radius: 15px;
-    
+} */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 5px 0;
+    text-align: center;
+    border: var(--cyan) 2px solid;
+    padding: 6px;
+    border-radius: 15px;
+}
+
+/* fixing flex issue after clicking go back button from high-score page*/
+#home-section {
+    flex-direction: column;
+}
+
+.quiz-container {
+    width: 100%;
 }
 
 /* setting size and color to the h1 header */
@@ -86,36 +139,56 @@ main {
     font-size: 20px;
 }
 
-/* changing start quize button font size and giving some padding to be bigger */
+/* changing start quiz button font size and setting margin bottom 5px from border */
 #start-quiz {
+    margin: auto auto 5px auto;
+    width: 50%;
     font-size: 20px;
-    padding: 5px 25px 5px 25px;
-    margin-bottom: 5px;
 }
 
-/* adding padding and width size to main context to look like a smaller box */
-.quiz-container {
-    margin: 200px auto 200px auto;
-    width: 75%;
+/*_________________QUIZ SECTION___________________*/
+
+/* .quiz-container {
+    display: flex;
+    flex-direction: column;
+} */
+#quiz {
+    flex-direction: column;
 }
 
 /* giving color and font size to question text */
+/* #question {
+    color: var(--off-white-blue);
+    font-size: 1em;
+    margin-bottom: 50px;
+} */
+
 #question {
     color: var(--off-white-blue);
-    font-size: 4em;
-    margin-bottom: 50px;
+    font-size: .85em;
+    margin: 20px auto;
 }
 
 /* making it so the header has display of flex so the time and highscore button are side by side with space between with a border around header */
-#answers {
+/* #answers {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 5px;
+} */
+#answers {
+    width: 100%;
 }
+
+#answers button {
+    width: 90%;
+}
+
+/*_________________HIGH-SCORE SUBMIT SECTION___________________*/
 
 /* giving color and some margin from top of box */
 #input-score {
+    flex-direction: column;
     color: var(--off-white-blue);
     margin-top: 10px;
 }
@@ -126,8 +199,15 @@ main {
     margin-bottom: 10px;
 }
 
+#submit-name {
+    width: 50%;
+}
+
+/*_________________HIGH-SCORE SECTION___________________*/
+
 /* giving color to highscore */
 #high-scores {
+    flex-direction: column;
     color: var(--off-white-blue);
 }
 
@@ -141,9 +221,55 @@ main {
     margin-bottom: 20px;
 }
 
+#go-back, #clear-scores {
+    width: 75%;
+}
+
 /* hiding all elements with these id's attached to them */
 #quiz,#input-score, #high-scores{
     display: none;
 } 
+
+/*_________________MEDIA QUERIES___________________*/
+
+@media only screen and (min-width: 425px) and (max-width: 1440px) {
+    #question {
+        font-size: 1.20em;
+    }
+    #answers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    #answers button {
+        font-size: 13px;
+        width: 95%;
+    }
+    #submit-name {
+        width: 50%;
+    }
+    #go-back, #clear-scores {
+    width: 50%;
+}
+}
+
+@media only screen and (min-width: 768px) {
+    #question {
+        font-size: 1.5em;
+    }
+    #answers {
+        flex-wrap: nowrap;
+    }
+    #answers button {
+        font-size: 15px;
+    }
+    #submit-name {
+        width: 30%;
+    }
+    #go-back, #clear-scores {
+    width: 30%;
+}
+}
 
 
